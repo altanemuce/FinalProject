@@ -5,19 +5,22 @@ using System;
 
 namespace ConsoleUI
 {
+
+    //SOLID
+    //Open Closed Principle
     class Program
     {
+
         static void Main(string[] args)
         {
             ProductManager productManager = new ProductManager(new EfProductDal());
 
-            foreach (var item in productManager.GetAll())
+            foreach (var item in productManager.GetByUnitPrice(5,100))
             {
                 Console.WriteLine(item.ProductName);
             }
 
-            productManager.GetAll();
-            Console.WriteLine("Hello World!");
+            
         }
     }
 }
